@@ -32,8 +32,8 @@ export default {
             }
         },
         open(){
-            let vis=this.$store.getters.getMapViewVis
-            this.$store.commit('setMapViewVis',!vis)
+            let vis=this.$store.getters.getMapTreeVis;
+            this.$store.commit('setMapTreeVis',!vis)
         }
     }
 };
