@@ -61,7 +61,9 @@ export default {
 </script>
 <style>
 .maptree{
-    position: relative;
+    /* position: absoulte;
+     */
+     position: absolute;
     top: 20px;
     left: 10px;
     height: 200px;
