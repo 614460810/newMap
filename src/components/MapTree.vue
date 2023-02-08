@@ -1,6 +1,6 @@
 <template>
     <div class="maptree" v-show="this.$store.getters.getMapTreeVis">
-        <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick" ></el-tree>
+        <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
     </div>
 </template>
 
@@ -19,6 +19,8 @@ export default {
         return {
             data: [{
                 label: '地图数据',
+                
+
                 children: [{
                     label: '暖色系',
                     layerid: 'layerid',
@@ -39,7 +41,8 @@ export default {
     },
     methods: {
         async handleNodeClick(data) {
-            const [TileLayer] = await loadModules(
+            if(data.layerurl){
+                const [TileLayer] = await loadModules(
                 ['esri/layers/TileLayer'],
                 options,
             );
@@ -50,20 +53,21 @@ export default {
             if (resultLayer) {
                 view.map.remove(resultLayer)
             }
-            const layer=new TileLayer({
-                url:data.layerurl,
-                id:data.layerid
+            const layer = new TileLayer({
+                url: data.layerurl,
+                id: data.layerid
             });
             view.map.add(layer);
+            }
+           
         }
     }
 };
 </script>
 <style>
-.maptree{
-    /* position: absoulte;
-     */
-     position: absolute;
+.maptree {
+
+    position: absolute;
     top: 20px;
     left: 10px;
     height: 200px;
@@ -71,5 +75,4 @@ export default {
     background-color: #fff;
 
 }
-
 </style>

@@ -5,7 +5,7 @@
       <el-container class="app-content-pannel">
         <el-aside width="200px" class="sys-menu">
           <el-menu default-active="1-4-1" class="el-menu-vertical-demo" 
-            :collapse="isCollapse" 
+            :collapse="false" 
             @select="handlePageSelect">
             <el-menu-item index="1" >
               <i class="el-icon-document"></i>
@@ -32,6 +32,11 @@ export default {
   name: 'App',
   components: {
   
+  },
+  data(){
+   return{
+    
+   }
   },
   methods:{
     handlePageSelect(index){
@@ -74,5 +79,9 @@ body,
 
 .map-content {
   padding: 5px !important;
+}
+.morescreen-view {
+    width: 100%;
+    height: 820px;
 }
 </style>

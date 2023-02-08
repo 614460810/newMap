@@ -8,8 +8,8 @@
   
   <script>
 import MapView from './../components/MapView.vue';
-import MapTools from '@/components/MapTools.vue';
-import MapTree from '@/components/MapTree.vue';
+import MapTools from './../components/MapTools.vue';
+import MapTree from './../components/MapTree.vue';
   export default {
     name: 'OneMap',
     components: {

@@ -7,25 +7,25 @@ const state={
     MapView:'',
     MapTreeVis:false,
 }
-const getter={
-    getMapView(){
+const getters={
+    getMapView(state){
         return state.MapView;
     },
-    getMapTreeVis(){
+    getMapTreeVis(state){
         return state.MapTreeVis;
     }
 }
 const mutations ={
     setMapView(state,value){
-        state.getMapView=value
+        state.MapView=value
     },
     setMapTreeVis(state,value){
-        state.getMapTreeVis=value
+        state.MapTreeVis=value
     }
 }
 const store=new Vuex.Store({
     state,
-    getter,
+    getters,
     mutations
 })
  
